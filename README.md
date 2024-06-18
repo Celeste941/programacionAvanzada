@@ -1,111 +1,45 @@
-![alt](./assets/img/img-del-proyecto.png)
-- [SuperHero API](#superhero-api)
-  - [Descripción](#descripción)
-  - [Funcionamiento](#funcionamiento)
-  - [Uso](#uso)
-  - [Notas adicionales](#notas-adicionales)
-
-# SuperHero API
+![alt](./assets/imgs/investigacionAnimal.png)
+- [Aplicación Web de Investigación de Animales Salvajes](#aplicación-web-de-investigación-de-animales-salvajes)
+  - [Características](#características)
+  - [Requerimientos del Proyecto](#requerimientos-del-proyecto)
+  - [Consideraciones](#consideraciones)
 
 Desarrolladora : Ana Celeste Pérez
-## Descripción
-Este código es para buscar superhéroes que utiliza la API de Superhero para obtener información
-sobre personajes de cómics. Permite a los usuarios ingresar un numero de un superhéroe y visualizar
- sus detalles, como nombre, conexiones, biografía y estadísticas de poder.
-
-## Funcionamiento
-1-Envío del formulario:
-Cuando el usuario envía el formulario con el botón de búsqueda, el código se activa para procesar
- la solicitud.
- 
-
-2-[Validación de entrada:](./assets/js/index.js#L57)
-Se verifica que el ID-número ingresado por el usuario sea un número entero positivo mayor que cero.
-Si la entrada no cumple con esta condición, se muestra una alerta indicando que se debe ingresar un 
-número válido.
-
-3-Solicitud a la API:
-Si el ID ingresado es válido, se realiza una solicitud a la API de Superhero para obtener información
-sobre el superhéroe 
-correspondiente.
-
-4-Procesamiento de la respuesta:
-Una vez que se recibe la respuesta de la API, se procesa la información para generar una "CARD" de 
-detalles del superhéroe.  Esta tarjeta incluye su nombre, conexiones, biografía, altura, peso y 
-alianzas. En caso de que la imagen de la card del superheroe indicado por el usuario no estuviera
-disponible saldra un mensaje indicandoselo al usuario.
-
-5-Visualización de estadísticas:
-Además de la tarjeta de detalles, se muestra un gráfico "pastel" que representa las estadísticas de
-poder del superhéroe. Estas estadísticas se obtienen de la respuesta de la API y se muestran en el 
-gráfico si están disponibles aunque sea "1" powerstats. En caso contrario, se indicara que las 
-estadísticas no están disponibles "cuando todas las estadisticas sean todas null o "-". [Ir al inicio](#superhero-api)
-EJEMPLO:
-
-*ESTE GRAFICO NO SE VERA*  
-``` javascript
- El heroe id-124
-
- "powerstats": {  
- "intelligence": "null",  
- "strength": "null",  
- "speed": "null",      
- "durability": "null",  
-  "power": "null",  
-  "combat": "null"}
-  ```  
-  
-
-*ESTE GRAFICO SI SE VERA*  
- ``` 
-El heroe id-125  
-"powerstats": {  
-"intelligence": "null",  
- "strength": "45",  
-"speed": "null",  
-"durability": "null",  
-"power": "null",  
-"combat": "null"}  
-  ```
 
 
-"Fue una manera para que no se rompiera el codigo cuando todos los stats fueran `null`, y apareciera 
-un mensaje indicandolo.""
+# Aplicación Web de Investigación de Animales Salvajes
+`Descripción:`  
+Esta aplicación web se ha desarrollado para ayudar a los investigadores de animales salvajes en Australia a registrar y gestionar comentarios sobre los animales en estudio. Utiliza un enfoque de Programación Orientada a Objetos (POO) para modelar los animales y sus características, y permite registrar cada animal en una tabla interactiva. La aplicación también reproduce los sonidos de los animales y muestra detalles en una ventana modal al hacer clic en las imágenes.
 
-Manejo de errores:
-El código maneja posibles errores durante la solicitud a la API. Si ocurre un error, se registra en 
-la consola del navegador y se muestra una alerta al usuario para informarle sobre el problema.
+## Características
+`Registro de animales con:`  
+-Nombre   
+-Edad    
+-Comentarios.   
+-Visualización de una imagen previa del animal seleccionado.   
+-Reproducción de sonidos asociados a cada animal.   
+-Ventana modal para mostrar los detalles del animal registrado.
 
-## Uso
+## Requerimientos del Proyecto
 
-1-Ingresar ID del superhéroe:
-El usuario debe ingresar el ID "un numero" del superhéroe en el campo de entrada proporcionado.
-"Cabe destacar que la api nos proporciona 732 heroes, no se controlo en caso de que el usuario colocara
-733 o 1000 por ejemplo".
+`Clases e Herencia:` Implementar las clases representadas en el diagrama de clases proporcionado, utilizando herencia.
 
-2-Enviar formulario:
-Después de ingresar el ID, el usuario debe hacer clic en el botón de búsqueda para enviar el formulario y 
-obtener la información del superhéroe.
+`Instancias de Clases:` Crear instancias de las clases utilizando los datos proporcionados por un formulario de entrada.
 
-3-Visualización de resultados:
-Una vez que se completa la búsqueda, se muestran los detalles del superhéroe y, si están disponibles, las 
-estadísticas de poder en forma de gráfico circular.  
-[Ir al inicio](#superhero-api)
+`Consulta Asíncrona:` Realizar una consulta asíncrona utilizando async/await para obtener las imágenes de los animales.
 
-## Notas adicionales
--El llamado de esta api en particular estuvo algo compleja, ya que existian datos que estaban incompletos
-por ejemplo: 
-1-Imagenes la cual la url no servian "error 404", "se resolvio" y a la vez no, tomando como decisión
-no mostrar la card del superheroe.
+`Función Autoejecutable (IIFE):` Implementar al menos una función autoejecutable (IIFE).
 
-2-Algunos stats "poderes" del heroe salian como null o "-", se "resolvio" no 
-mostrando el grafico si todos eran null y si un stat salia se mostraba ese podeer nada mas. 
+`Módulos ES6:` Dividir el código en módulos para una mejor organización y reutilización del código.
 
-3- algunos datos del  superheroe como la ocupación, peso, entre otros, aparecian como "-", no solucione ese 
-detalle, simplemente deje que se mostrara pero no se si sera agradable ante la vista del usuario o mejor 
-desaparecer ese dato con un condicional "se ira mejorando el codigo"
-En caso de que algunos datos de la API estén ausentes o sean incorrectos, se ha implementado lógica para evitar
-errores y mostrar la información disponible de manera apropiada "los que se pudo".  
-[Ir al inicio](#superhero-api)
+`Manipulación del DOM:` Mostrar en una tabla los animales registrados a través del formulario de entrada.
 
+## Consideraciones
 
+`Validaciones:` Asegurarse de que el usuario ha proporcionado todos los datos necesarios antes de agregar un animal a la tabla.
+
+`Restablecer Formulario:` Devolver el formulario a su estado inicial después de registrar cada animal.
+
+`Interacción de Audio:` Programar la funcionalidad del botón de audio para reproducir el sonido correspondiente a cada animal.
+
+`Ventana Modal:` Mostrar los detalles de cada animal en una ventana modal al hacer clic en su imagen.[Ir al inicio](#aplicación-web-de-investigación-de-animales-salvajes).
