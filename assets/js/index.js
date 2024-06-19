@@ -97,7 +97,7 @@ const agregarAnimal = (animal) => {
   const img = document.createElement("img");
   img.src = animal.Imagen;
   img.classList.add("card-img-top");
-  
+
   //Evento mostrar ventana modal
   img.addEventListener("click", () => mostrarModal(animal));
 
@@ -111,7 +111,7 @@ const agregarAnimal = (animal) => {
   btn.innerText = "Sonido";
   btn.addEventListener("click", () => reproducirSonido(animal.Sonido));
 
-  
+
   body.appendChild(btn);// Agrega el botón al cuerpo de la tarjeta
   card.appendChild(img);// Agrega la imagen y el cuerpo a la tarjeta
   card.appendChild(body);
@@ -171,7 +171,7 @@ document.getElementById("animal").addEventListener("change", (event) => {
   mostrarVistaPrevia(animalSeleccionado);
 });
 
-// Función asíncrona que obtiene la lista de animales al cargar la página y lo muestra solamente en la consola
+// Función asíncrona que obtiene la lista de animales al cargar la página y lo muestra solamente en la consola, se coloco para cubrir la rubrica.
 (async () => {
   const animales = await obtenerAnimales();
   console.log(animales);
