@@ -89,7 +89,7 @@ document.getElementById("btnRegistrar").addEventListener("click", () => {
 const agregarAnimal = (animal) => {
   const contenedor = document.getElementById("Animales");
 
-  //Se crea una nueva tarjeta para el animal
+ // Crea el cuerpo de la tarjeta
   const card = document.createElement("div");
   card.classList.add("card", "m-2", "contenedor-animal");
 
@@ -101,7 +101,7 @@ const agregarAnimal = (animal) => {
   //Evento mostrar ventana modal
   img.addEventListener("click", () => mostrarModal(animal));
 
-  // Crea el cuerpo de la tarjeta
+  //contenedor div para el boton
   const body = document.createElement("div");
   body.classList.add("card-body");
 
