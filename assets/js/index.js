@@ -171,7 +171,7 @@ document.getElementById("animal").addEventListener("change", (event) => {
   mostrarVistaPrevia(animalSeleccionado);
 });
 
-// Función asíncrona que obtiene la lista de animales al cargar la página
+// Función asíncrona que obtiene la lista de animales al cargar la página y lo muestra solamente en la consola
 (async () => {
   const animales = await obtenerAnimales();
   console.log(animales);
